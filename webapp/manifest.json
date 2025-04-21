@@ -1,0 +1,186 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "app.dominicstevevazs08",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.17.3",
+      "toolsId": "3d65c6f0-f739-4a0a-a0ed-7c3af14d0a6b"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/Z9208_MINING_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/mainService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "MiningDetails-Create": {
+          "semanticObject": "MiningDetails",
+          "action": "Create",
+          "title": "{{MiningDetails-Create.flpTitle}}",
+          "subTitle": "{{MiningDetails-Create.flpSubtitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.134.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "app.dominicstevevazs08.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "splitApp",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "app.dominicstevevazs08.view",
+        "async": true,
+        "viewPath": "app.dominicstevevazs08.view"
+      },
+      "routes": [
+        {
+          "name": "RouteMiningDetailsView",
+          "pattern": "",
+          "target": [
+            "TargetMiningDetailsView","TargetEmpty"
+          ]
+        },
+        {  
+        "name": "RouteDetail",
+        "pattern": "RouteDetail/{index}",
+        "target": [
+          "TargetDetailView"
+        ]
+        },
+        {
+          "name": "RouteCreateView",
+          "pattern": "create",
+          "target": [
+            "TargetCreateView"
+          ]
+        },
+        {
+          "name": "RouteAllDetailsView",
+          "pattern": "RouteAllDetails",
+          "target": [
+            "TargetAllDetailsView"
+          ]
+        }
+
+      ],
+      "targets": {
+        "TargetMiningDetailsView": {
+          "viewId": "MiningDetailsView",
+          "viewName": "MiningDetailsView",
+          "controlAggregation": "masterPages",
+          "viewLevel":1
+          
+        },
+        
+        "TargetAllDetailsView": {
+          "viewId":"idAllDetails",
+          "viewName":"AllDetailsView",
+          "controlAggregation": "detailPages",
+          "viewLevel":2
+         
+        },
+        
+        "TargetCreateView": {
+          "viewId":"idCreate",
+          "viewName":"CreateView",
+          "controlAggregation": "detailPages",
+          "viewLevel":2
+          
+        },
+        "TargetDetailView":{
+          "viewId": "idDetail",
+          "viewName": "DetailView",
+          "controlAggregation": "detailPages",
+          "viewLevel":2
+
+        },
+        "TargetEmpty":{
+          "id": "idEmpty",
+          "name": "EmptyView",
+          "controlAggregation": "detailPages",
+          "viewLevel":1
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "app.dominicstevevazs08.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "appdominicstevevazs08"
+  }
+}

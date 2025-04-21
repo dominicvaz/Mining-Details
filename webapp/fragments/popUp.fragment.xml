@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <SelectDialog title="Type of Mineral" items="{MiningDetails>/}" confirm="onConfirmType">
+        <items>
+            <StandardListItem title="{MiningDetails>TypeMineral}" />
+        </items>
+    </SelectDialog>
+</core:FragmentDefinition>

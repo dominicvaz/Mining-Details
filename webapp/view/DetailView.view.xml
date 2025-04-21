@@ -1,0 +1,32 @@
+<mvc:View controllerName="app.dominicstevevazs08.controller.DetailView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="idDetailPage" title="{i18n>titleDetail}" showNavButton="true" navButtonPress="onToMining">
+        <f:SimpleForm editable="true">
+            <Label text="{i18n>LocId}" required="true"></Label>
+            <Text text="{MiningDetails>LocationId}"></Text>
+
+            <Label text="{i18n>LocDesc}" required="true"></Label>
+            <Text text="{MiningDetails>LocationDesc}"></Text>
+
+            <Label text="{i18n>ResAlloc}" required="true"></Label>
+            <Text text="{MiningDetails>ResourceAllocated}"></Text>
+
+            <Label text="{i18n>Totcost}"></Label>
+            <Input value="{MiningDetails>TotalCost}" id="idTotcostUp"></Input>
+
+            <Label text="{i18n>RepPoss}"></Label>
+            <Input value="{MiningDetails>RepPossMin}" id="idRepPossUp"></Input>
+
+            <Label text="{i18n>Drills}"></Label>
+            <Input value="{MiningDetails>NoOfDrills}" id="idDrillsUp"></Input>
+
+            <Label text="{i18n>Type}"></Label>
+            <Input value="{MiningDetails>TypeMineral}" id="idTypeUp"></Input>
+
+            <Button text="{i18n>update}" icon="sap-icon://synchronize" type="Emphasized" press="onUpdate"></Button>
+            <Button text="{i18n>delete}" icon="sap-icon://delete" type="Reject" press="onDelete"></Button>
+        </f:SimpleForm>
+    </Page>
+</mvc:View>

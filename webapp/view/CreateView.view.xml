@@ -1,0 +1,31 @@
+<mvc:View controllerName="app.dominicstevevazs08.controller.CreateView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="idCreatePage" title="{i18n>titleCreate}" showNavButton="true" navButtonPress="onToMining">
+    <f:SimpleForm editable="true" >
+        <Label text="{i18n>LocId}" required="true"></Label>
+        <Input id="idLocIdCr"></Input>
+
+         <Label text="{i18n>LocDesc}" required="true"></Label>
+         <Input id="idLocDescCr"></Input>
+
+         <Label text="{i18n>ResAlloc}" required="true"></Label>
+         <Input id="idResAllocCr"></Input>
+
+         <Label text="{i18n>Totcost}"></Label>
+         <Input id="idTotcostCr"></Input>
+
+         <Label text="{i18n>RepPoss}"></Label>
+         <Input id="idRepPossCr"></Input>
+
+         <Label text="{i18n>Drills}"></Label>
+         <Input id="idDrillsCr"></Input>
+
+         <Label text="{i18n>Type}"></Label>
+         <Input id="idTypeCr"></Input>
+
+         <Button text="{i18n>create}" type="Emphasized" press="onSubmit" ></Button>
+    </f:SimpleForm>
+    </Page>
+</mvc:View>

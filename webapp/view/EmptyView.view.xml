@@ -1,0 +1,12 @@
+<mvc:View controllerName="app.dominicstevevazs08.controller.EmptyView"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m">
+    <Page id="idEmpty" title="Empty View">
+            <content>
+                   
+            </content>
+               
+    </Page>
+</mvc:View>
