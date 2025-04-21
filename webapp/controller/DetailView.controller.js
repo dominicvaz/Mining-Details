@@ -73,7 +73,6 @@ sap.ui.define([
         },
         onUpdate: function(oEvent) {
             let oContext = oEvent.getSource().getBindingContext("MiningDetails").getObject();
-            console.log("Context object:", oContext)
             this._onUpdateCall(oContext);
         },
         
@@ -94,7 +93,6 @@ sap.ui.define([
                 NoOfDrills: parm.NoOfDrills,
                 TypeMineral: parm.TypeMineral
             };
-            console.log("Payload being sent:", updatedData);
             oModel.update(entity, updatedData, {
                 method: "PATCH",
                 success: (resp) => {
