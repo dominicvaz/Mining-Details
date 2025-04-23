@@ -5,7 +5,11 @@
     xmlns="sap.m">
     <Page id="idEmpty" title="Empty View">
             <content>
-                   
+                  
+                   <Image src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2p2eXczcGxucG1qa2h0ZzZxeTM5cDV4cmpoYmFzazE1Y2g2b3FteSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FzZdZUOZ1sR8v8JuWh/giphy.gif" ></Image>
+                   <Image src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHlhNzZuenRwMGo3aHlmaHRla2V6aHJna3BxM2tnbTE5OWtoZDh5MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tWeC0zisZmGh2ZzkmI/giphy.gif"></Image>
+                   <Image src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmNjZjMxYXJjb3l4dnc0a3BwMGVibjEwajk3bWhlbjFheGlydmh5NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/925zfrQXEx6WTGBP4d/giphy.gif"></Image>
+                   <Image src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExejJlb2RqMWEyY3FhZTA3b3JlZng5dnF5eHg4Ymc1bnN3aHNubWVtayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1WYr37XB6qB3SDXrkV/giphy.gif"></Image>
             </content>
                
     </Page>

@@ -112,7 +112,7 @@
         },
         {  
         "name": "RouteDetail",
-        "pattern": "RouteDetail/{index}",
+        "pattern": "RouteDetail/{indexup}",
         "target": [
           "TargetDetailView"
         ]
@@ -129,6 +129,13 @@
           "pattern": "RouteAllDetails",
           "target": [
             "TargetAllDetailsView"
+          ]
+        },
+        {
+          "name": "RouteMidView",
+          "pattern": "RouteMid/{index}",
+          "target": [
+            "TargetMidView"
           ]
         }
 
@@ -169,6 +176,12 @@
           "name": "EmptyView",
           "controlAggregation": "detailPages",
           "viewLevel":1
+        },
+        "TargetMidView":{
+          "id": "idMid",
+          "name": "MidView",
+          "controlAggregation": "detailPages",
+          "viewLevel":2
         }
       }
     },

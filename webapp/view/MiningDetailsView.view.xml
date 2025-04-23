@@ -1,4 +1,4 @@
-<mvc:View controllerName="app.dominicstevevazs08.controller.MiningDetailsView"
+<!-- <mvc:View controllerName="app.dominicstevevazs08.controller.MiningDetailsView"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="idList" title="List View">
@@ -17,8 +17,8 @@
 					<ObjectListItem
 					intro="{MiningDetails>LocationId}" title="{MiningDetails>TypeMineral}">
 					<attributes>
-                    
 						<ObjectAttribute text="{MiningDetails>LocationDesc}" title="Location"></ObjectAttribute>
+					
 					</attributes>
                         </ObjectListItem>
 				</items>
@@ -31,4 +31,45 @@
 			</OverflowToolbar>
 		</footer>
 	</Page>
+</mvc:View> -->
+
+<mvc:View controllerName="app.dominicstevevazs08.controller.MiningDetailsView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="idList" title="List View">
+        <headerContent>
+            <Button icon="sap-icon://sort" press="onSort"/>
+            <Button icon="sap-icon://action" tooltip="Share" press="onAllDetailsView"/>
+        </headerContent>
+        <subHeader>
+            <OverflowToolbar>
+                <SearchField search="onSearch" liveChange="onSearch"/>
+            </OverflowToolbar>
+        </subHeader>
+        <content>
+            <List items="{MiningDetails>/}" id="idListCtrl" mode="SingleSelectMaster" selectionChange="onItemSelect">
+                <items>
+                    <CustomListItem>
+                        <HBox justifyContent="SpaceBetween" alignItems="Center" >
+                            <VBox width="270px">
+                                <ObjectListItem
+                                    intro="{MiningDetails>LocationId}" title="{MiningDetails>TypeMineral}">
+                                    <attributes>
+                                        <ObjectAttribute text="{MiningDetails>LocationDesc}" title="Location"/>
+                                    </attributes>
+                                </ObjectListItem>
+                            </VBox>
+                            <Button  icon="sap-icon://delete" width="40px" type="Reject" press="onDelete"/>
+                        </HBox>
+                    </CustomListItem>
+                </items>
+            </List>
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer/>
+                <Button text="{i18n>create}" type="Emphasized" press="onCreate"/>
+            </OverflowToolbar>
+        </footer>
+    </Page>
 </mvc:View>

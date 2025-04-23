@@ -14,14 +14,17 @@ sap.ui.define([
            oRoute.attachPatternMatched(this._onPatternMatched, this);
 
          }, 
+    
+
 
          onRouteMatched: function(oEvent){
-            let index=oEvent.getParameter("arguments").index;
+            let index=oEvent.getParameter("arguments").indexup;
             let sPath= "MiningDetails>/" + index;
             let oView=this.getView();
             oView.bindElement(sPath);
 
          },
+         
          _onPatternMatched: function() {
             this._getData();
         },
@@ -38,39 +41,7 @@ sap.ui.define([
                 error: () => {}
             })
         },
-        onDelete:function(oEvent){
-            let oContext=oEvent.getSource().getBindingContext("MiningDetails").getObject()
-            MessageBox.confirm("Are you sure?", {
-                onClose:(choice)=>{
-                    if(choice==='OK'){
-                    this._onDeleteCall(oContext)
-                    }
-                }
-            })
-        },
-        _onDeleteCall:function(parm){
-            let key1= parm.LocationId
-            let key2= parm.LocationDesc
-            let key3= parm.ResourceAllocated
-            key2=key2.replace(/ /g, "%20");
-            key3=key3.replace(/ /g, "%20");
-    
-            let oModel=this.getOwnerComponent().getModel();
-            let entity="/MiningDataSet(LocationId='"+key1+"',LocationDesc='"+key2+"',ResourceAllocated='"+key3+"')"
-            oModel.remove(entity,{
-                success:(resp)=>{
-                    MessageBox.success("Record Deleted", {
-                        onClose:function(){
-                            var oRouter= this.getOwnerComponent().getRouter()
-                            oRouter.navTo("RouteMiningDetailsView", {}, true)
-                        }.bind(this)
-                    })
-                },
-                error:(err)=>{
-                    MessageBox.error("Deletion failed")
-                }
-            })
-        },
+        
         onUpdate: function(oEvent) {
             let oContext = oEvent.getSource().getBindingContext("MiningDetails").getObject();
             this._onUpdateCall(oContext);
@@ -108,14 +79,11 @@ sap.ui.define([
                 }
             });
         },
-        
-         onToMining: function(){
-             var oRouter=this.getOwnerComponent().getRouter()
-             oRouter.navTo("RouteMiningDetailsView")
-         },
-        
-    
-
-
+        onToMidView: function() {
+            let index = this.getView().getBindingContext("MiningDetails").getPath().split("/")[1];
+            this.getOwnerComponent().getRouter().navTo("RouteMidView", {
+                index: index
+            });
+        }
     });
 }); 
