@@ -25,7 +25,7 @@
          <Label text="{i18n>Type}"></Label>
          <Input id="idTypeCr"></Input>
 
-         <Button text="{i18n>create}" type="Emphasized" press="onSubmit" ></Button>
+         <Button text="{i18n>create}" icon="sap-icon://write-new" type="Success" tooltip="Create Record" press="onSubmit" ></Button>
     </f:SimpleForm>
     </Page>
 </mvc:View>

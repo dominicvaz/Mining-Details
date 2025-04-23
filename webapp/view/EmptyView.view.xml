@@ -3,8 +3,9 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:f="sap.ui.layout.form"
     xmlns="sap.m">
-    <Page id="idEmpty" title="Empty View">
+    <Page id="idEmpty" title="{i18n>empty}">
             <content>
+            <Image src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2w0aG54Z3o4bHlqYWR0bWZkY3NuNnJpZmNrMGlpc3hnNTRwejV0dSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/QtvgXhQFT1ChkQg6Gl/giphy.gif" width="100%" height="450px"></Image>
                   
                    <!-- <Image src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2p2eXczcGxucG1qa2h0ZzZxeTM5cDV4cmpoYmFzazE1Y2g2b3FteSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FzZdZUOZ1sR8v8JuWh/giphy.gif" ></Image>
                    <Image src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHlhNzZuenRwMGo3aHlmaHRla2V6aHJna3BxM2tnbTE5OWtoZDh5MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tWeC0zisZmGh2ZzkmI/giphy.gif"></Image>

@@ -20,7 +20,7 @@ sap.ui.define([
             var oRouter=this.getOwnerComponent().getRouter()
             oRouter.navTo("RouteMiningDetailsView")
         },
-        setNone:function(oEvent){
+        onSetNone:function(oEvent){
             oEvent.getSource().setValueState("None")
         },
         _clearFields: function () {
@@ -86,7 +86,7 @@ sap.ui.define([
                 success:function(response){
                     MessageBox.success("record inserted",{
                         onClose:function(){
-                            this._clearFields();
+                            that._clearFields();
                             var oRouter= that.getOwnerComponent().getRouter()
                             oRouter.navTo("RouteMiningDetailsView", {}, true)
                            

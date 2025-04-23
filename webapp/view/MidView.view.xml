@@ -30,7 +30,7 @@
         <footer>
 			<OverflowToolbar>
 				<ToolbarSpacer/>
-				<Button text="{i18n>update}" type="Emphasized"  press="onDetailView"/>
+				<Button text="{i18n>edit}" icon="sap-icon://edit" type="Emphasized" tooltip="Edit Record"  press="onDetailView"/>
 			</OverflowToolbar>
 		</footer>
     </Page>

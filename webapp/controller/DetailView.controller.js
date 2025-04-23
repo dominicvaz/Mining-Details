@@ -65,7 +65,7 @@ sap.ui.define([
                 TypeMineral: parm.TypeMineral
             };
             oModel.update(entity, updatedData, {
-                method: "PATCH",
+                //method: "PATCH",
                 success: (resp) => {
                     MessageBox.success("Record Updated", {
                         onClose: function() {

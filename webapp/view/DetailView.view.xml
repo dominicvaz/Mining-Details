@@ -25,7 +25,7 @@
             <Label text="{i18n>Type}"></Label>
             <Input value="{MiningDetails>TypeMineral}" id="idTypeUp"></Input>
 
-            <Button text="{i18n>update}" icon="sap-icon://synchronize" type="Emphasized" press="onUpdate"></Button>
+            <Button text="{i18n>update}" icon="sap-icon://synchronize" tooltip="Update Record" type="Success" press="onUpdate"></Button>
         </f:SimpleForm>
     </Page>
 </mvc:View>

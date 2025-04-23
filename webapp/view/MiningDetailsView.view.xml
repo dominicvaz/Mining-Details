@@ -1,45 +1,10 @@
-<!-- <mvc:View controllerName="app.dominicstevevazs08.controller.MiningDetailsView"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="idList" title="List View">
-		<headerContent>
-				<Button icon="sap-icon://sort" press="onSort"/>
-				<Button icon="sap-icon://action" tooltip="Share" press="onAllDetailsView"/>
-		</headerContent>
-		<subHeader>
-			<OverflowToolbar>
-				<SearchField search="onSearch" liveChange="onSearch"/>
-			</OverflowToolbar>
-		</subHeader>
-		<content>
-			<List items="{MiningDetails>/}" id="idListCtrl" mode="SingleSelectMaster" selectionChange="onItemSelect">
-				<items>
-					<ObjectListItem
-					intro="{MiningDetails>LocationId}" title="{MiningDetails>TypeMineral}">
-					<attributes>
-						<ObjectAttribute text="{MiningDetails>LocationDesc}" title="Location"></ObjectAttribute>
-					
-					</attributes>
-                        </ObjectListItem>
-				</items>
-			</List>
-		</content>
-		<footer>
-			<OverflowToolbar>
-				<ToolbarSpacer/>
-				<Button text="{i18n>create}" type="Emphasized"  press="onCreate"/>
-			</OverflowToolbar>
-		</footer>
-	</Page>
-</mvc:View> -->
-
 <mvc:View controllerName="app.dominicstevevazs08.controller.MiningDetailsView"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="idList" title="List View">
+    <Page id="idList" title="{i18n>list}">
         <headerContent>
-            <Button icon="sap-icon://sort" press="onSort"/>
-            <Button icon="sap-icon://action" tooltip="Share" press="onAllDetailsView"/>
+            <Button icon="sap-icon://sort" tooltip="Sort Records" press="onSort"/>
+            
         </headerContent>
         <subHeader>
             <OverflowToolbar>
@@ -68,7 +33,8 @@
         <footer>
             <OverflowToolbar>
                 <ToolbarSpacer/>
-                <Button text="{i18n>create}" type="Emphasized" press="onCreate"/>
+                <Button icon="sap-icon://table-view" type="Neutral" tooltip="Show All" press="onAllDetailsView"/>
+                <Button text="{i18n>create}" icon="sap-icon://create" tooltip="Create Record" type="Neutral" press="onCreate"/>
             </OverflowToolbar>
         </footer>
     </Page>

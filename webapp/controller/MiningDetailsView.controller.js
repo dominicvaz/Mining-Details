@@ -42,7 +42,7 @@ sap.ui.define([
                 this.bDescending = false;
             }
 
-            var oSorter = new Sorter("TypeMineral", this.bDescending);
+            var oSorter = new Sorter("LocationId", this.bDescending);
             var oList = this.getView().byId("idListCtrl");
             var oBinding = oList.getBinding("items");
             oBinding.sort(oSorter);
