@@ -26,7 +26,6 @@
             <Input value="{MiningDetails>TypeMineral}" id="idTypeUp"></Input>
 
             <Button text="{i18n>update}" icon="sap-icon://synchronize" type="Emphasized" press="onUpdate"></Button>
-            <Button text="{i18n>delete}" icon="sap-icon://delete" type="Reject" press="onDelete"></Button>
         </f:SimpleForm>
     </Page>
 </mvc:View>

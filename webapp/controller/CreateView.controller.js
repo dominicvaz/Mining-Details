@@ -1,17 +1,34 @@
 sap.ui.define([
    "sap/ui/core/mvc/Controller",
    "./BaseController",
+   "../Validator/validator",
     "sap/m/MessageBox"
-], (Controller, BaseController, MessageBox) => {
+], (Controller, BaseController,validator, MessageBox) => {
     "use strict";
 
     return Controller.extend("app.dominicstevevazs08.controller.CreateView", {
         onInit() {
+            let oView = this.getView();
+            let fieldIds = ["idLocIdCr", "idLocDescCr", "idResAllocCr", "idTotcostCr", "idRepPossCr", "idDrillsCr", "idTypeCr"];
+ 
+            fieldIds.forEach(fieldId => {
+                oView.byId(fieldId).attachChange(this.onSetNone, this);
+            });
         },
 
         onToMining: function(){
             var oRouter=this.getOwnerComponent().getRouter()
             oRouter.navTo("RouteMiningDetailsView")
+        },
+        setNone:function(oEvent){
+            oEvent.getSource().setValueState("None")
+        },
+        _clearFields: function () {
+            let oView = this.getView();
+            ["idLocIdCr", "idLocDescCr", "idResAllocCr", "idTotcostCr", "idRepPossCr", "idDrillsCr", "idTypeCr"].forEach(fieldId => {
+                oView.byId(fieldId).setValue("");
+                oView.byId(fieldId).setValueState("None");
+            });
         },
        
         onSubmit: function(){
@@ -32,6 +49,24 @@ sap.ui.define([
             let sRepPoss = oRepPoss.getValue();
             let sDrills = oDrills.getValue();
             let sType = oType.getValue();
+
+            let fields = [
+                {id:"idLocIdCr", value:sLocId},
+                {id:"idLocDescCr", value:sLocDesc},
+                {id:"idResAllocCr", value:sResAlloc},
+                {id:"idTotcostCr", value:sTotCost},
+                {id:"idRepPossCr", value:sRepPoss},
+                {id:"idDrillsCr", value:sDrills},
+                {id:"idTypeCr", value:sType}
+            ]
+
+            let validationResult = validator.validateFields(fields);
+            if (validationResult !== true) {
+               validationResult.forEach(fieldId => {
+                   this.getView().byId(fieldId).setValueState("Error");
+               });
+               return;
+           }
         
             let payload= {
                 "LocationId": sLocId,
@@ -51,15 +86,10 @@ sap.ui.define([
                 success:function(response){
                     MessageBox.success("record inserted",{
                         onClose:function(){
+                            this._clearFields();
                             var oRouter= that.getOwnerComponent().getRouter()
                             oRouter.navTo("RouteMiningDetailsView", {}, true)
-                            oLocId.setValue("")
-                            oLocDesc.setValue("")
-                            oResAlloc.setValue("")
-                            oTotCost.setValue("")
-                            oRepPoss.setValue("")
-                            oDrills.setValue("")
-                            oType.setValue("")
+                           
                         }.bind(this)
                     })
                 },

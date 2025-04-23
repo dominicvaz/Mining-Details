@@ -3,46 +3,33 @@
     xmlns="sap.m"
     xmlns:comp="sap.ui.comp.filterbar">
     <Page id="page" title="{i18n>titleAllDetails}" showNavButton="true" navButtonPress="onToMiningDetails">
+     <subHeader>
+            <OverflowToolbar>
+            <Input id= "idFilterDesc" placeholder="Location Description" liveChange="onFilter" width="200px"></Input>
+                <Input id= "idFilterType" placeholder="Mineral type" liveChange="onFilter" width="200px"></Input>
+                 <ToolbarSpacer />
+               <Button icon="sap-icon://sort" press="onSort"/>
+              
+               
+            </OverflowToolbar>
+        </subHeader>
      <content/>
-        <comp:FilterBar>
+        <!-- <comp:FilterBar>
         <comp:filterItems>
-            <comp:FilterItem name="filter LocID">
-                <comp:control>
-        <Input id= "idFilterLoc" placeholder="Location ID" liveChange="onFilter"></Input>
-                </comp:control>
-            </comp:FilterItem>
+           
             <comp:FilterItem name="filter LocDesc">
             <comp:control>
         <Input id= "idFilterDesc" placeholder="Location Description" liveChange="onFilter"></Input>
             </comp:control>
             </comp:FilterItem>
-            <comp:FilterItem name="filter ResAlloc">
-            <comp:control>
-        <Input id= "idFilterResAlloc" placeholder="Resources Allocated" liveChange="onFilter"></Input>
-            </comp:control>
-            </comp:FilterItem>
-            <comp:FilterItem name="filter TotCost">
-            <comp:control>
-        <Input id= "idFilterTotCost" placeholder="Total Cost" liveChange="onFilter"></Input>
-            </comp:control>
-            </comp:FilterItem>
-            <comp:FilterItem name="filter RepPoss">
-            <comp:control>
-        <Input id= "idFilterRepPoss" placeholder="Report of Mineral" liveChange="onFilter"></Input>
-            </comp:control>
-            </comp:FilterItem>
-            <comp:FilterItem name="filter Drills">
-            <comp:control>
-        <Input id= "idFilterDrills" placeholder="No of Drills" liveChange="onFilter"></Input>
-            </comp:control>
-            </comp:FilterItem>
+            
             <comp:FilterItem name="filter Type">
             <comp:control>
         <Input id= "idFilterType" placeholder="Mineral type" liveChange="onFilter"></Input>
             </comp:control>
             </comp:FilterItem>
             </comp:filterItems>
-        </comp:FilterBar>
+        </comp:FilterBar> -->
 
 <Table id= "idMiningTab" items="{MiningDetails>/}">
             <columns>
@@ -76,7 +63,7 @@
                     <Text text="{MiningDetails>TotalCost}"></Text>
                     <Text text="{MiningDetails>RepPossMin}"></Text>
                     <Text text="{MiningDetails>NoOfDrills}"></Text>
-                    <Input value="{MiningDetails>TypeMineral}" showValueHelp="true" valueHelpRequest="onF4Help"></Input>
+                    <Text text="{MiningDetails>TypeMineral}"></Text>
                 </cells>
             </ColumnListItem>
         </Table>
